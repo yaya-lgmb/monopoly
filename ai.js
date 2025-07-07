@@ -179,11 +179,14 @@ function AITest(p) {
 		for (var i = 39; i >= 0; i--) {
 			s = square[i];
 
-			if (s.owner === p.index && !s.mortgage && s.house === 0) {
-				mortgage(i);
-				console.log(s.name);
+			if (s.owner === p.index && !s.mortgage) {
+			        if (s.house === 0) {
+				        mortgage(i);
+				        console.log(s.name);
+			        } else {
+			                // logic to sell houses/hotels in each land consecutively as needed
+			        }
 			}
-
 			if (p.money >= 0) {
 				return;
 			}
